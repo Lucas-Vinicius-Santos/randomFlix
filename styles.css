@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --title: #fffcf9;
+  --subtitle: #b3b3b3;
+  --bg-button: #e9e6e3;
+  --background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+[disabled] {
+  cursor: not-allowed;
+  filter: brightness(0.5);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+  padding: 4rem;
+}
+
+.title {
+  margin-top: calc(10vh - 4rem);
+  text-align: center;
+  color: var(--title);
+}
+
+.title img {
+  width: 8.6rem;
+  height: 6.2rem;
+}
+
+.title h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+#hero {
+  display: flex;
+  gap: 2.8rem;
+  max-width: 80rem;
+}
+
+#hero.hidden {
+  display: none;
+}
+
+#hero.show {
+  display: flex;
+}
+
+#hero img {
+  width: 171px;
+  height: 243.77px;
+}
+
+#heroDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+
+  height: 243.77px;
+
+  overflow-y: auto;
+}
+
+#heroDescription::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+#heroDescription::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#heroDescription::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#heroDescription strong {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--title);
+}
+
+#heroDescription p {
+  text-align: left;
+  padding-right: 0.8rem;
+
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  cursor: pointer;
+  color: #000000;
+  background: var(--bg-button);
+  transition: filter 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
+
+button img {
+  width: 3.6rem;
+  height: 2.6rem;
+  margin-right: 1.6rem;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  text-align: center;
+  color: var(--subtitle);
+}
+
+@media (max-width: 720px) {
+  #hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  #heroDescription {
+    height: 100%;
+    max-height: calc(243.77px * 2);
+
+    overflow-y: auto;
+  }
+}
